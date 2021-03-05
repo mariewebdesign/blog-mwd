@@ -1,0 +1,13 @@
+{% extends "cbv_app/cbv_layout.html" %}
+
+{% block content %}
+
+<h1>Voulez-vous vraiment supprimer {{shop.name}} ?</h1>
+
+<form action="" method="POST">
+    {% csrf_token %}
+    <input type="submit" class="btn btn-danger" value="supprimer">
+    <a href="{% url 'cbv_app:shop_detail' pk=shop.pk %}" class="btn btn-default">Annuler</a>
+</form>
+
+{% endblock %}

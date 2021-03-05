@@ -1,0 +1,18 @@
+{% extends "cbv_app/cbv_layout.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <h1>Liste des antennes sur toute la France</h1>
+    
+    <ol>
+        {% for shop in shops %}
+        
+        <li><a href="{{shop.id}}">{{shop.name}}</a></li>
+        
+        {% endfor %}
+    </ol>
+    
+</div>
+{% endblock %}

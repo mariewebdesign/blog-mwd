@@ -1,0 +1,29 @@
+{% extends "cbv_app/cbv_layout.html" %}
+
+{% block content %}
+<div>
+    <h2>Détails des magasins</h2>
+    <p>Nom : {{shop_detail.name}}</p>
+    <p>Gérant : {{shop_detail.manager}}</p>
+    <p>Lieu : {{shop_detail.location}}</p>
+
+    <hr>
+
+    <h3>Clients</h3>
+
+    {% for client in shop_detail.shops.all %}
+
+    <p>{{client.name}} - {{client.email}}</p>
+
+    {% endfor %}
+
+</div>
+<hr>
+<div>
+    <p>
+        <a href="{% url 'cbv_app:update' pk=shop_detail.pk %}" class="btn btn-warning">Mettre à jour</a>
+        <a href="{% url 'cbv_app:delete' pk=shop_detail.pk %}" class="btn btn-danger">Supprimer</a>
+    </p>
+</div>
+
+{% endblock %}

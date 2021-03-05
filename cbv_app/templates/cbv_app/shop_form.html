@@ -1,0 +1,15 @@
+{% extends "cbv_app/cbv_layout.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-primary" value="Valider">
+        
+    </form>
+</div>
+
+ {% endblock %}
